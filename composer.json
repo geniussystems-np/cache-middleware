@@ -1,0 +1,19 @@
+{
+    "name": "geniussystems-np/cache-middleware",
+    "description": "Cache Middleware for Resources",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yagya Chaudhary",
+            "email": "mail@bdryagya.com.np"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "GeniusSystems\\Http\\Middleware\\": "src/Http/Middleware/"
+        }
+    },
+    "require": {}
+}
