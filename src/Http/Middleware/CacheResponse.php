@@ -25,7 +25,7 @@ class CacheResponse
         Cache::put($request->getUri(), $response, $ttl);
 
         return $response->withHeaders([
-            "GS-Cached-Status"  => "MISS" 
+            "GS-Cache-Status"  => "MISS" 
         ]);
     }
 }
