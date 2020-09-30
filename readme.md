@@ -38,4 +38,4 @@ protected $middleware = [
   ];
 ```
 
-`ServeCacheResponse` should be after authentication middleware since it doesn’t pass the request to other middleware in the stack. Above code asumes you’re enabling `cache-middleware` for all the routes. For specific routes, you need to added the middleware to it’s respective group and enable middleware in route.
+`ServeCacheResponse` should be after authentication middleware since it doesn’t pass the request to other middleware in the stack if there’s a response. Above code asumes you’re enabling `cache-middleware` for all the routes. For specific routes, you need to added the middleware to it’s respective group and enable middleware in route.
