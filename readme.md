@@ -31,7 +31,7 @@ protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         .
         .
-        \GeniusSystems\Http\Middleware\ServeCacheResponse::class,
+        \GeniusSystems\Http\Middleware\ServeCachedResponse::class,
         .
         .
         \GeniusSystems\Http\Middleware\CacheResponse::class,
