@@ -1,16 +1,16 @@
 # Cache Middleware for Laravel/Lumen
 
-We use two middleware for cache, one for serving response from cache and another for generating cache.
+We use two middleware, one for serving the cached response and another for generating the cache.
 
 - ServeCachedResponse
-  - The only job will be serve the response from cache if available
+  - The only job of this middleware is serving the response from cache if available
   - This middleware should be below the Authentication in the Middleware stack
 - CacheReponse
   - This middleware should analyze the response for it’s cacheability by checking the cache headers
   - If the response is cacheable, it should cache the response in configured cache store(Redis)
-  - Currently, We are using only `cache-control` directive to cache the response
+  - Currently, We are using only `cache-control` directive
 
-The package uses Laravel `Cache` to store and serve response. Any response having `cache-control` directive with `max-age` will be cached for duration defined in max-age parameter.
+This package uses Laravel `Cache` to store and serve response. Any response having `cache-control` directive with `max-age` will be cached for duration defined in `max-age` parameter.
 
 ## Installing the package using composer
 
@@ -38,4 +38,4 @@ protected $middleware = [
   ];
 ```
 
-`ServeCacheResponse` should be after authentication middleware since it doesn’t pass the request to other middleware in the stack if there’s a response. Above code asumes you’re enabling `cache-middleware` for all the routes. For specific routes, you need to added the middleware to it’s respective group and enable middleware in route.
+`ServeCachedResponse` should be placed after authentication middleware since it doesn’t pass the request to other middleware in the stack if there’s a response. Above code asumes you’re enabling `cache-middleware` for all the routes. For specific routes, you need to add the middleware to it’s respective group and enable it in the route.
